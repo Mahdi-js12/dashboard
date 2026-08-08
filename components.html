@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کامپوننت‌ها - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* استایل‌های مخصوص این صفحه */
+    .component-section {
+      margin-bottom: 40px;
+    }
+    .component-section h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+    .component-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      padding: 20px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .component-row > * {
+      margin-bottom: 5px;
+    }
+    .section-desc {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+    .demo-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- 🔹 سایدبار -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">CRM Pro</div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-section-title">اصلی</li>
+        <li><a href="index.html"><span class="menu-icon">🏠</span> داشبورد</a></li>
+        <li><a href="users.html"><span class="menu-icon">👥</span> کاربران</a></li>
+        <li><a href="analytics.html"><span class="menu-icon">📈</span> گزارشات</a></li>
+        <li><a href="#"><span class="menu-icon">💼</span> پروژه‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">📋</span> وظایف</a></li>
+        
+        <li class="sidebar-section-title">ارتباطات</li>
+        <li><a href="#"><span class="menu-icon">💬</span> پیام‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">📧</span> ایمیل‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">🔔</span> اعلانات</a></li>
+        
+        <li class="sidebar-section-title">سیستم</li>
+        <li><a href="settings.html"><span class="menu-icon">⚙️</span> تنظیمات</a></li>
+        <li><a href="components.html" class="active"><span class="menu-icon">🧩</span> کامپوننت‌ها</a></li>
+        <li><a href="login.html"><span class="menu-icon">🚪</span> خروج</a></li>
+      </ul>
+    </aside>
+
+    <!-- 🔹 محتوای اصلی -->
+    <main class="main-content">
+      
+      <!-- هدر -->
+      <header class="header">
+        <div class="header-search">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو...">
+        </div>
+        <div class="header-actions">
+          <button class="header-icon-btn" onclick="toggleSidebar()">☰</button>
+          <button class="header-icon-btn">🔔<span class="badge">۳</span></button>
+          <div class="header-user">
+            <div class="header-user-info">
+              <div class="name">علی رضایی</div>
+              <div class="role">مدیر ارشد</div>
+            </div>
+            <div class="header-user-avatar">ع</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- معرفی صفحه -->
+      <div class="panel" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(249, 115, 22, 0.1));">
+        <h2 style="font-size: 22px; margin-bottom: 10px;">🧩 کامپوننت‌های رابط کاربری</h2>
+        <p style="color: var(--text-secondary); font-size: 14px;">
+          مجموعه‌ای از المان‌های UI که در سراسر پروژه استفاده شده‌اند. می‌توانید هر کدام را امتحان کنید.
+        </p>
+      </div>
+
+      <!-- دکمه‌ها -->
+      <div class="component-section">
+        <h3>🔘 دکمه‌ها (Buttons)</h3>
+        <p class="section-desc">انواع دکمه با رنگ‌ها و سایزهای مختلف</p>
+        <div class="component-row">
+          <button class="btn btn-primary">دکمه اصلی</button>
+          <button class="btn btn-secondary">دکمه ثانویه</button>
+          <button class="btn btn-accent">دکمه تأکیدی</button>
+          <button class="btn btn-success">✓ موفق</button>
+          <button class="btn btn-danger">✕ خطر</button>
+          <button class="btn btn-primary" disabled>غیرفعال</button>
+          <button class="btn btn-primary btn-sm">کوچک</button>
+          <button class="btn btn-primary btn-icon">➕</button>
+        </div>
+      </div>
+
+      <!-- Badgeها -->
+      <div class="component-section">
+        <h3>🏷️ برچسب‌ها (Badges)</h3>
+        <p class="section-desc">برچسب‌های رنگی برای نمایش وضعیت</p>
+        <div class="component-row">
+          <span class="badge badge-success">✓ موفق</span>
+          <span class="badge badge-danger">✕ خطا</span>
+          <span class="badge badge-warning">⏳ در انتظار</span>
+          <span class="badge badge-info">ℹ️ اطلاعات</span>
+          <span class="badge badge-primary">★ ویژه</span>
+        </div>
+      </div>
+
+      <!-- آواتار -->
+      <div class="component-section">
+        <h3>👤 آواتار (Avatar)</h3>
+        <p class="section-desc">تصاویر پروفایل کاربران در سایزهای مختلف</p>
+        <div class="component-row">
+          <div class="avatar avatar-sm">ک</div>
+          <div class="avatar">م</div>
+          <div class="avatar avatar-lg">ع</div>
+          <div class="avatar avatar-xl">ر</div>
+        </div>
+      </div>
+
+      <!-- Toggle Switch -->
+      <div class="component-section">
+        <h3>🔘 کلید تغییر وضعیت (Toggle Switch)</h3>
+        <p class="section-desc">کلیدهای روشن/خاموش برای تنظیمات</p>
+        <div class="component-row">
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span style="font-size: 13px;">فعال</span>
+          
+          <label class="toggle-switch" style="margin-right: 30px;">
+            <input type="checkbox">
+            <span class="toggle-slider"></span>
+          </label>
+          <span style="font-size: 13px;">غیرفعال</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="component-section">
+        <h3>📊 نوار پیشرفت (Progress Bar)</h3>
+        <p class="section-desc">نمایش درصد پیشرفت کارها</p>
+        <div class="demo-box">
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px;">
+              <span>در حال بارگذاری</span>
+              <span style="color: var(--primary-light);">۲۵٪</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 25%;"></div></div>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px;">
+              <span>تقریباً تمومه</span>
+              <span style="color: var(--accent);">۷۵٪</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px;">
+              <span>تکمیل شده</span>
+              <span style="color: var(--success);">۱۰۰٪</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- فرم‌ها -->
+      <div class="component-section">
+        <h3>📝 فرم‌ها (Form Elements)</h3>
+        <p class="section-desc">انواع المان‌های ورودی</p>
+        <div class="demo-box">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">متن کوتاه</label>
+              <input type="text" class="form-control" placeholder="یک متن وارد کنید...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">انتخاب از لیست</label>
+              <select class="form-control">
+                <option>گزینه اول</option>
+                <option>گزینه دوم</option>
+                <option>گزینه سوم</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">متن بلند</label>
+            <textarea class="form-control" placeholder="توضیحات خود را بنویسید..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">تاریخ</label>
+            <input type="date" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="component-section">
+        <h3>📑 زبانه‌ها (Tabs)</h3>
+        <p class="section-desc">تقسیم محتوا به بخش‌های مختلف</p>
+        <div class="demo-box">
+          <div class="tabs">
+            <div class="tab active">همه</div>
+            <div class="tab">فعال</div>
+            <div class="tab">غیرفعال</div>
+            <div class="tab">آرشیو</div>
+          </div>
+          <p style="color: var(--text-secondary); margin-top: 20px; font-size: 13px;">
+            📌 محتوای تب انتخاب شده در اینجا نمایش داده می‌شود. روی هر تب کلیک کنید تا فعال شود.
+          </p>
+        </div>
+      </div>
+
+      <!-- Skeleton Loading -->
+      <div class="component-section">
+        <h3>⏳ اسکلت بارگذاری (Skeleton)</h3>
+        <p class="section-desc">نمایش حالت بارگذاری قبل از لود داده‌ها</p>
+        <div class="demo-box">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div class="skeleton" style="width: 50px; height: 50px; border-radius: 50%;"></div>
+            <div style="flex: 1;">
+              <div class="skeleton" style="height: 15px; width: 40%; margin-bottom: 8px;"></div>
+              <div class="skeleton" style="height: 12px; width: 60%;"></div>
+            </div>
+          </div>
+          <div class="skeleton" style="height: 15px; width: 90%; margin-bottom: 10px;"></div>
+          <div class="skeleton" style="height: 15px; width: 75%; margin-bottom: 10px;"></div>
+          <div class="skeleton" style="height: 100px; width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="component-section">
+        <h3>📭 حالت خالی (Empty State)</h3>
+        <p class="section-desc">نمایش زمانی که داده‌ای وجود ندارد</p>
+        <div class="demo-box" style="padding: 0;">
+          <div class="empty-state">
+            <div class="empty-state-icon">📭</div>
+            <h3>هیچ موردی یافت نشد</h3>
+            <p>هنوز هیچ داده‌ای ثبت نشده است. برای شروع یک مورد جدید اضافه کنید.</p>
+            <button class="btn btn-primary" style="margin-top: 20px;">➕ افزودن اولین مورد</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- نمایش Toast -->
+      <div class="component-section">
+        <h3>🔔 اعلان سریع (Toast)</h3>
+        <p class="section-desc">پیام‌های کوتاه که گوشه صفحه نمایش داده می‌شوند</p>
+        <div class="component-row">
+          <button class="btn btn-success" onclick="showToast('عملیات با موفقیت انجام شد!', 'success')">✓ نمایش موفقیت</button>
+          <button class="btn btn-danger" onclick="showToast('خطایی رخ داد! دوباره تلاش کنید.', 'error')">✕ نمایش خطا</button>
+        </div>
+      </div>
+
+      <!-- نمایش Modal -->
+      <div class="component-section">
+        <h3>📋 پنجره مودال (Modal)</h3>
+        <p class="section-desc">پنجره‌های بازشو برای عملیات مهم</p>
+        <div class="component-row">
+          <button class="btn btn-primary" onclick="openModal('demoModal')">📋 نمایش Modal تأیید</button>
+          <button class="btn btn-secondary" onclick="openModal('infoModal')">ℹ️ نمایش Modal اطلاعات</button>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="component-section">
+        <h3>🎴 کارت‌ها (Cards)</h3>
+        <p class="section-desc">کارت‌های نمایش اطلاعات</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+          <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 25px; border-radius: var(--radius); color: white;">
+            <div style="font-size: 30px; margin-bottom: 10px;">💎</div>
+            <h4 style="font-size: 16px; margin-bottom: 8px;">پلن طلایی</h4>
+            <p style="font-size: 12px; opacity: 0.9; margin-bottom: 15px;">مناسب کسب‌وکارهای متوسط</p>
+            <div style="font-size: 22px; font-weight: 700;">۹۹,۰۰۰ <span style="font-size: 12px;">تومان/ماه</span></div>
+          </div>
+          <div style="background: linear-gradient(135deg, var(--accent), #ea580c); padding: 25px; border-radius: var(--radius); color: white;">
+            <div style="font-size: 30px; margin-bottom: 10px;">🚀</div>
+            <h4 style="font-size: 16px; margin-bottom: 8px;">پلن نقره‌ای</h4>
+            <p style="font-size: 12px; opacity: 0.9; margin-bottom: 15px;">مناسب استارتاپ‌ها</p>
+            <div style="font-size: 22px; font-weight: 700;">۴۹,۰۰۰ <span style="font-size: 12px;">تومان/ماه</span></div>
+          </div>
+          <div style="background: linear-gradient(135deg, var(--success), #047857); padding: 25px; border-radius: var(--radius); color: white;">
+            <div style="font-size: 30px; margin-bottom: 10px;">⭐</div>
+            <h4 style="font-size: 16px; margin-bottom: 8px;">پلن برنزی</h4>
+            <p style="font-size: 12px; opacity: 0.9; margin-bottom: 15px;">مناسب فریلنسرها</p>
+            <div style="font-size: 22px; font-weight: 700;">۱۹,۰۰۰ <span style="font-size: 12px;">تومان/ماه</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- لیست‌ها -->
+      <div class="component-section">
+        <h3>📃 لیست‌ها (List Items)</h3>
+        <p class="section-desc">نمایش آیتم‌ها با آیکون و وضعیت</p>
+        <div class="demo-box">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+            <div style="width: 36px; height: 36px; background-color: rgba(16, 185, 129, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--success);">✓</div>
+            <div style="flex: 1;">
+              <div style="font-size: 13px; font-weight: 600;">فایل پروژه آپلود شد</div>
+              <div style="font-size: 11px; color: var(--text-muted);">۵ دقیقه پیش</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+            <div style="width: 36px; height: 36px; background-color: rgba(124, 58, 237, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-light);">👤</div>
+            <div style="flex: 1;">
+              <div style="font-size: 13px; font-weight: 600;">کاربر جدید ثبت‌نام کرد</div>
+              <div style="font-size: 11px; color: var(--text-muted);">۱ ساعت پیش</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
+            <div style="width: 36px; height: 36px; background-color: rgba(249, 115, 22, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent);">💬</div>
+            <div style="flex: 1;">
+              <div style="font-size: 13px; font-weight: 600;">پیام جدید از پشتیبانی</div>
+              <div style="font-size: 11px; color: var(--text-muted);">۲ ساعت پیش</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Modal تأیید -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">⚠️ تأیید عملیات</div>
+        <button class="modal-close" onclick="closeModal('demoModal')">✕</button>
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 20px;">
+        آیا مطمئن هستید که می‌خواهید این مورد را حذف کنید؟ این عملیات غیرقابل بازگشت است.
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: flex-start;">
+        <button class="btn btn-danger" onclick="showToast('مورد با موفقیت حذف شد', 'success'); closeModal('demoModal');">🗑️ بله، حذف شود</button>
+        <button class="btn btn-secondary" onclick="closeModal('demoModal')">انصراف</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal اطلاعات -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">ℹ️ اطلاعات بیشتر</div>
+        <button class="modal-close" onclick="closeModal('infoModal')">✕</button>
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 20px;">
+        این یک نمونه از پنجره مودال اطلاعاتی است. می‌توانید محتوای مختلفی در این بخش قرار دهید.
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: flex-start;">
+        <button class="btn btn-primary" onclick="closeModal('infoModal')">متوجه شدم</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
