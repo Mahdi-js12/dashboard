@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>پروفایل کاربر - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* استایل مخصوص فقط این صفحه */
+    .profile-header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    }
+    .profile-info {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-info h2 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .profile-info p {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .profile-actions {
+      display: flex;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background-color: var(--bg-input);
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .info-card .label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .info-card .value {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">CRM Pro</div>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="menu-icon">🏠</span> داشبورد</a></li>
+        <li><a href="users.html" class="active"><span class="menu-icon">👥</span> کاربران</a></li>
+        <li><a href="analytics.html"><span class="menu-icon">📈</span> گزارشات</a></li>
+        <li><a href="settings.html"><span class="menu-icon">⚙️</span> تنظیمات</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="header">
+        <a href="users.html" class="btn btn-secondary btn-sm">← بازگشت به لیست</a>
+        <div class="header-actions">
+          <button class="header-icon-btn">🔔</button>
+          <div class="header-user">
+            <div class="header-user-info">
+              <div class="name">مهدی خلیلی</div>
+              <div class="role">مدیر ارشد</div>
+            </div>
+            <div class="header-user-avatar">ع</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- پروفایل هدر -->
+      <div class="profile-header">
+        <div class="avatar avatar-xl" style="background: white; color: var(--primary);">ع</div>
+        <div class="profile-info">
+          <h2>علی رضایی</h2>
+          <p>📧 ali.rezaei@mail.com &nbsp;&nbsp; 📱 ۰۹۱۲۳۴۵۶۷۸۹</p>
+          <span class="badge badge-success">● فعال</span>
+          <span class="badge badge-primary" style="margin-right: 5px;">مدیر ارشد</span>
+        </div>
+        <div class="profile-actions">
+          <button class="btn btn-secondary" style="background-color: rgba(255,255,255,0.15); color: white; border: none;">✏️ ویرایش</button>
+          <button class="btn btn-danger">🚫 مسدود کردن</button>
+        </div>
+      </div>
+
+      <!-- کارت‌های اطلاعات -->
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="label">تاریخ عضویت</div>
+          <div class="value">۱۴۰۲/۰۵/۱۲</div>
+        </div>
+        <div class="info-card">
+          <div class="label">آخرین ورود</div>
+          <div class="value">۲ ساعت پیش</div>
+        </div>
+        <div class="info-card">
+          <div class="label">تعداد سفارش‌ها</div>
+          <div class="value">۴۸ سفارش</div>
+        </div>
+        <div class="info-card">
+          <div class="label">میانگین خرید</div>
+          <div class="value">۲,۳۰۰,۰۰۰ تومان</div>
+        </div>
+        <div class="info-card">
+          <div class="label">استان</div>
+          <div class="value">تهران</div>
+        </div>
+        <div class="info-card">
+          <div class="label">امتیاز وفاداری</div>
+          <div class="value">⭐⭐⭐⭐ (۴.۸)</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="panel">
+        <div class="tabs">
+          <div class="tab active">📊 فعالیت‌ها</div>
+          <div class="tab">📦 سفارش‌ها</div>
+          <div class="tab">💬 پیام‌ها</div>
+          <div class="tab">📅 تاریخچه ورود</div>
+        </div>
+
+        <!-- نمودار فعالیت -->
+        <div class="chart-placeholder" style="margin-bottom: 20px;">
+          <div class="bar-chart">
+            <div class="bar" style="height: 30%"></div>
+            <div class="bar" style="height: 55%"></div>
+            <div class="bar" style="height: 45%"></div>
+            <div class="bar" style="height: 70%"></div>
+            <div class="bar" style="height: 60%"></div>
+            <div class="bar" style="height: 85%"></div>
+            <div class="bar" style="height: 75%"></div>
+          </div>
+        </div>
+
+        <!-- جدول سفارش‌ها -->
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>شماره سفارش</th>
+                <th>محصول</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>وضعیت</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#۱۲۴۵۶</td>
+                <td>اشتراک طلایی سالانه</td>
+                <td>۵,۰۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۷/۰۸</td>
+                <td><span class="badge badge-success">✓ تکمیل شد</span></td>
+              </tr>
+              <tr>
+                <td>#۱۲۳۸۹</td>
+                <td>دوره آموزشی پیشرفته</td>
+                <td>۲,۸۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۶/۲۲</td>
+                <td><span class="badge badge-success">✓ تکمیل شد</span></td>
+              </tr>
+              <tr>
+                <td>#۱۲۲۰۱</td>
+                <td>مشاوره اختصاصی</td>
+                <td>۱,۵۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۵/۱۵</td>
+                <td><span class="badge badge-warning">⏳ در حال انجام</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
