@@ -1,0 +1,1182 @@
+/* ===================================================================
+   🔹 فایل: style.css
+   📌 توضیح: استایل مشترک تمام صفحات پروژه CRM
+   🎨 تم: Dark Mode با رنگ اصلی بنفش و نارنجی
+   =================================================================== */
+
+/* ---------- ۱. فونت و متغیرهای رنگی ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* رنگ‌های اصلی */
+  --primary: #7c3aed;          /* بنفش اصلی */
+  --primary-light: #a78bfa;    /* بنفش روشن */
+  --primary-dark: #5b21b6;     /* بنفش تیره */
+  --accent: #f97316;           /* نارنجی */
+  --accent-light: #fb923c;     /* نارنجی روشن */
+  --success: #10b981;          /* سبز */
+  --danger: #ef4444;           /* قرمز */
+  --warning: #f59e0b;          /* زرد */
+  --info: #06b6d4;             /* آبی */
+
+  /* رنگ‌های پس‌زمینه */
+  --bg-main: #0f0a1e;          /* پس‌زمینه اصلی */
+  --bg-card: #1a1330;          /* پس‌زمینه کارت‌ها */
+  --bg-card-hover: #241940;    /* hover کارت‌ها */
+  --bg-sidebar: #160f2b;       /* پس‌زمینه سایدبار */
+  --bg-input: #1f1740;         /* پس‌زمینه اینپوت‌ها */
+
+  /* رنگ‌های متن */
+  --text-primary: #f1f5f9;     /* متن اصلی */
+  --text-secondary: #94a3b8;   /* متن ثانویه */
+  --text-muted: #64748b;       /* متن کم‌رنگ */
+
+  /* سایر */
+  --border: #2d1f54;           /* رنگ حاشیه */
+  --shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* ---------- ۲. ریست و استایل پایه ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Vazirmatn', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  direction: rtl;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* ---------- ۳. چیدمان اصلی (Layout) ---------- */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- ۴. سایدبار ---------- */
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-sidebar);
+  border-left: 1px solid var(--border);
+  padding: 20px 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 25px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.sidebar-logo .logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sidebar-logo .logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 4px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+  border-right: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.sidebar-menu a.active {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: var(--primary-light);
+  border-right-color: var(--primary);
+}
+
+.sidebar-menu .menu-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.sidebar-section-title {
+  padding: 15px 20px 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- ۵. محتوای اصلی ---------- */
+.main-content {
+  flex: 1;
+  margin-right: 240px;
+  padding: 20px;
+}
+
+/* ---------- ۶. هدر ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  padding: 15px 25px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-input);
+  border-radius: var(--radius-sm);
+  padding: 8px 15px;
+  width: 300px;
+  gap: 8px;
+}
+
+.header-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  width: 100%;
+  font-size: 13px;
+}
+
+.header-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  position: relative;
+  transition: var(--transition);
+}
+
+.header-icon-btn:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--primary-light);
+}
+
+.header-icon-btn .badge {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background-color: var(--danger);
+  color: white;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px 5px 5px;
+  background-color: var(--bg-input);
+  border-radius: var(--radius-sm);
+}
+
+.header-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.header-user-info {
+  font-size: 12px;
+}
+
+.header-user-info .name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.header-user-info .role {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+/* ---------- ۷. کارت‌های KPI (آمار) ---------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.kpi-info .kpi-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.kpi-info .kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.kpi-info .kpi-change {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.kpi-change.up {
+  color: var(--success);
+}
+
+.kpi-change.down {
+  color: var(--danger);
+}
+
+.kpi-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.kpi-icon.purple {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: var(--primary-light);
+}
+
+.kpi-icon.orange {
+  background-color: rgba(249, 115, 22, 0.15);
+  color: var(--accent);
+}
+
+.kpi-icon.green {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.kpi-icon.blue {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--info);
+}
+
+/* ---------- ۸. پنل‌ها (Cards/Panels) ---------- */
+.panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ---------- ۹. دکمه‌ها ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #ea580c);
+  color: white;
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- ۱۰. جدول ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead th {
+  text-align: right;
+  padding: 12px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-input);
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table thead th:first-child {
+  border-top-right-radius: var(--radius-sm);
+}
+
+.data-table thead th:last-child {
+  border-top-left-radius: var(--radius-sm);
+}
+
+.data-table tbody td {
+  padding: 14px 15px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- ۱۱. Badge و Tag ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.badge-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+}
+
+.badge-info {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--info);
+}
+
+.badge-primary {
+  background-color: rgba(124, 58, 237, 0.15);
+  color: var(--primary-light);
+}
+
+/* ---------- ۱۲. آواتار ---------- */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.avatar-sm { width: 28px; height: 28px; font-size: 11px; }
+.avatar-lg { width: 60px; height: 60px; font-size: 20px; }
+.avatar-xl { width: 100px; height: 100px; font-size: 32px; }
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-cell .user-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.user-cell .user-email {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ---------- ۱۳. فرم‌ها ---------- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* ---------- ۱۴. Toggle Switch ---------- */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: var(--transition);
+}
+
+.toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  right: 3px;
+  bottom: 3px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(-20px);
+  background-color: white;
+}
+
+/* ---------- ۱۵. نمودارها (CSS-Only) ---------- */
+.chart-placeholder {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(180deg, 
+    rgba(124, 58, 237, 0.05) 0%, 
+    transparent 100%);
+  border-radius: var(--radius-sm);
+  position: relative;
+  padding: 20px;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 260px;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  padding: 30px 10px 0;
+  gap: 10px;
+}
+
+.bar {
+  flex: 1;
+  max-width: 70px;
+  background: linear-gradient(180deg, #7c3aed, #5b21b6);
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 30px;
+}
+
+.bar:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c);
+  transform: translateY(-5px);
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #f1f5f9;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+.bar:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c);
+  transform: scaleY(1.05);
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.bar-value {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.bar {
+  flex: 1;
+  margin: 0 4px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: var(--transition);
+  min-height: 20px;
+}
+
+.bar:hover {
+  background: linear-gradient(180deg, var(--accent), #ea580c);
+  transform: scaleY(1.05);
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ---------- ۱۶. Pagination ---------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--primary);
+  color: white;
+}
+
+.pagination button.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- ۱۷. Tabs ---------- */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.tab {
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tab.active {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary);
+}
+
+/* ---------- ۱۸. Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 25px;
+  max-width: 450px;
+  width: 90%;
+  border: 1px solid var(--border);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- ۱۹. Toast ---------- */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 2000;
+  transform: translateX(-150%);
+  transition: transform 0.4s ease;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.toast.success .toast-icon {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.toast.error .toast-icon {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+/* ---------- ۲۰. Login Page ---------- */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--accent));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-left::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.login-brand {
+  position: relative;
+  z-index: 1;
+}
+
+.login-brand h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.login-brand p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.login-features {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+}
+
+.login-feature-icon {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-form-wrapper {
+  max-width: 380px;
+  width: 100%;
+}
+
+.login-form-wrapper h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.login-form-wrapper .subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* ---------- ۲۱. Empty State ---------- */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-input);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 20px;
+  color: var(--text-muted);
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+/* ---------- ۲۲. Progress Bar ---------- */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-input);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* ---------- ۲۳. Skeleton Loading ---------- */
+.skeleton {
+  background: linear-gradient(90deg, 
+    var(--bg-input) 0%, 
+    var(--bg-card-hover) 50%, 
+    var(--bg-input) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---------- ۲۴. Dropdown Menu ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  min-width: 180px;
+  padding: 8px 0;
+  margin-top: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 50;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+}
+
+/* ---------- ۲۵. ریسپانسیو ---------- */
+@media (max-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(100%);
+    transition: var(--transition);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-right: 0;
+  }
+  
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-search {
+    display: none;
+  }
+  
+  .login-page {
+    flex-direction: column;
+  }
+  
+  .login-left {
+    padding: 30px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
