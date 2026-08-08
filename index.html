@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>داشبورد - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- 🔹 سایدبار -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">CRM Pro</div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-section-title">اصلی</li>
+        <li><a href="index.html" class="active"><span class="menu-icon">🏠</span> داشبورد</a></li>
+        <li><a href="users.html"><span class="menu-icon">👥</span> کاربران</a></li>
+        <li><a href="analytics.html"><span class="menu-icon">📈</span> گزارشات</a></li>
+        <li><a href="#"><span class="menu-icon">💼</span> پروژه‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">📋</span> وظایف</a></li>
+        
+        <li class="sidebar-section-title">ارتباطات</li>
+        <li><a href="#"><span class="menu-icon">💬</span> پیام‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">📧</span> ایمیل‌ها</a></li>
+        <li><a href="#"><span class="menu-icon">🔔</span> اعلانات</a></li>
+        
+        <li class="sidebar-section-title">سیستم</li>
+        <li><a href="settings.html"><span class="menu-icon">⚙️</span> تنظیمات</a></li>
+        <li><a href="components.html"><span class="menu-icon">🧩</span> کامپوننت‌ها</a></li>
+        <li><a href="login.html"><span class="menu-icon">🚪</span> خروج</a></li>
+      </ul>
+    </aside>
+
+    <!-- 🔹 محتوای اصلی -->
+    <main class="main-content">
+      
+      <!-- هدر -->
+      <header class="header">
+        <div class="header-search">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو در همه جا...">
+        </div>
+        <div class="header-actions">
+          <button class="header-icon-btn" onclick="toggleSidebar()">☰</button>
+          <button class="header-icon-btn">
+            🔔
+            <span class="badge">۳</span>
+          </button>
+          <button class="header-icon-btn">✉️</button>
+          <div class="header-user">
+            <div class="header-user-info">
+              <div class="name">مهدی خلیلی</div>
+              <div class="role">مدیر ارشد</div>
+            </div>
+            <div class="header-user-avatar">ع</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- کارت‌های KPI -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">کل فروش ماه</div>
+            <div class="kpi-value">۲۸۵,۰۰۰,۰۰۰</div>
+            <div class="kpi-change up">▲ ۱۲.۵٪ نسبت به ماه قبل</div>
+          </div>
+          <div class="kpi-icon purple">💰</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">سفارش‌های جدید</div>
+            <div class="kpi-value">۱,۲۳۹</div>
+            <div class="kpi-change up">▲ ۸.۲٪ افزایش</div>
+          </div>
+          <div class="kpi-icon orange">📦</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">مشتریان فعال</div>
+            <div class="kpi-value">۲,۸۴۵</div>
+            <div class="kpi-change up">▲ ۵.۱٪ رشد</div>
+          </div>
+          <div class="kpi-icon green">👥</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">نرخ تبدیل</div>
+            <div class="kpi-value">۲۸.۵٪</div>
+            <div class="kpi-change down">▼ ۲.۱٪ کاهش</div>
+          </div>
+          <div class="kpi-icon blue">🎯</div>
+        </div>
+      </div>
+
+      <!-- ردیف اول: نمودار عملکرد -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">عملکرد فروش ۶ ماه اخیر</div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-sm btn-secondary">هفتگی</button>
+            <button class="btn btn-sm btn-primary">ماهانه</button>
+            <button class="btn btn-sm btn-secondary">سالانه</button>
+          </div>
+        </div>
+       <div class="chart-placeholder">
+  <div class="bar-chart">
+    <div class="bar" style="height: 100px;">
+      <span class="bar-value">۲۸۵M</span>
+      <span class="bar-label">فروردین</span>
+    </div>
+    <div class="bar" style="height: 145px;">
+      <span class="bar-value">۳۴۰M</span>
+      <span class="bar-label">اردیبهشت</span>
+    </div>
+    <div class="bar" style="height: 125px;">
+      <span class="bar-value">۳۱۰M</span>
+      <span class="bar-label">خرداد</span>
+    </div>
+    <div class="bar" style="height: 180px;">
+      <span class="bar-value">۴۲۰M</span>
+      <span class="bar-label">تیر</span>
+    </div>
+    <div class="bar" style="height: 160px;">
+      <span class="bar-value">۳۸۰M</span>
+      <span class="bar-label">مرداد</span>
+    </div>
+    <div class="bar" style="height: 215px;">
+      <span class="bar-value">۴۸۵M</span>
+      <span class="bar-label">شهریور</span>
+    </div>
+  </div>
+</div>
+
+      <!-- ردیف دوم: جدیدترین سفارش‌ها -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">جدیدترین سفارش‌ها</div>
+          <a href="#" class="btn btn-sm btn-secondary">مشاهده همه ←</a>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>مشتری</th>
+                <th>محصول</th>
+                <th>مبلغ</th>
+                <th>تاریخ</th>
+                <th>وضعیت</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="avatar">م</div>
+                    <div>
+                      <div class="user-name">مریم احمدی</div>
+                      <div class="user-email">09123456789</div>
+                    </div>
+                  </div>
+                </td>
+                <td>اشتراک طلایی</td>
+                <td>۲,۵۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۷/۱۲</td>
+                <td><span class="badge badge-success">✓ پرداخت شد</span></td>
+                <td>
+                  <button class="btn btn-icon btn-secondary">👁️</button>
+                  <button class="btn btn-icon btn-secondary">✏️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="avatar">ح</div>
+                    <div>
+                      <div class="user-name">حسین مرادی</div>
+                      <div class="user-email">09129876543</div>
+                    </div>
+                  </div>
+                </td>
+                <td>دوره آموزشی</td>
+                <td>۱,۸۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۷/۱۱</td>
+                <td><span class="badge badge-warning">⏳ در انتظار</span></td>
+                <td>
+                  <button class="btn btn-icon btn-secondary">👁️</button>
+                  <button class="btn btn-icon btn-secondary">✏️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="avatar">ز</div>
+                    <div>
+                      <div class="user-name">زهرا کریمی</div>
+                      <div class="user-email">09127777777</div>
+                    </div>
+                  </div>
+                </td>
+                <td>پکیج نقره‌ای</td>
+                <td>۹۵۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۷/۱۱</td>
+                <td><span class="badge badge-success">✓ پرداخت شد</span></td>
+                <td>
+                  <button class="btn btn-icon btn-secondary">👁️</button>
+                  <button class="btn btn-icon btn-secondary">✏️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="avatar">ر</div>
+                    <div>
+                      <div class="user-name">رضا نوری</div>
+                      <div class="user-email">09121111111</div>
+                    </div>
+                  </div>
+                </td>
+                <td>مشاوره تخصصی</td>
+                <td>۳,۲۰۰,۰۰۰ تومان</td>
+                <td>۱۴۰۳/۰۷/۱۰</td>
+                <td><span class="badge badge-danger">✕ لغو شد</span></td>
+                <td>
+                  <button class="btn btn-icon btn-secondary">👁️</button>
+                  <button class="btn btn-icon btn-secondary">✏️</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    /* ===================================================================
+   🔹 فایل: main.js
+   📌 توضیح: اسکریپت مشترک تمام صفحات پروژه CRM
+   ⚡ شامل: Toast، Modal، Dropdown، Sidebar
+   =================================================================== */
+
+// ---------- ۱. تابع Toast (نمایش پیام) ----------
+function showToast(message, type = 'success') {
+  const existingToast = document.querySelector('.toast');
+  if (existingToast) existingToast.remove();
+
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `
+    <div class="toast-icon">${type === 'success' ? '✓' : '✕'}</div>
+    <div>${message}</div>
+  `;
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add('show'), 50);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}
+
+// ---------- ۲. باز و بسته کردن Modal ----------
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) modal.classList.add('active');
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) modal.classList.remove('active');
+}
+
+// بستن Modal با کلیک روی پس‌زمینه
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    e.target.classList.remove('active');
+  }
+});
+
+// ---------- ۳. Dropdown Menu ----------
+document.addEventListener('click', (e) => {
+  const dropdown = e.target.closest('.dropdown');
+  
+  // بستن همه Dropdownها
+  document.querySelectorAll('.dropdown').forEach(d => {
+    if (d !== dropdown) d.classList.remove('open');
+  });
+
+  // باز کردن Dropdown کلیک شده
+  if (dropdown) {
+    const toggle = e.target.closest('.dropdown-toggle');
+    if (toggle || e.target.closest('.dropdown-toggle')) {
+      dropdown.classList.toggle('open');
+    }
+  }
+});
+
+// ---------- ۴. مدیریت Tabs ----------
+function initTabs() {
+  document.querySelectorAll('.tabs').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  });
+}
+
+// ---------- ۵. Sidebar موبایل ----------
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) sidebar.classList.toggle('open');
+}
+
+// ---------- ۶. اجرا در لود صفحه ----------
+document.addEventListener('DOMContentLoaded', () => {
+  initTabs();
+  
+  // دکمه خروج
+  const logoutBtn = document.getElementById('logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      if (confirm('آیا مطمئن هستید که می‌خواهید خارج شوید؟')) {
+        showToast('با موفقیت خارج شدید', 'success');
+        setTimeout(() => window.location.href = 'login.html', 1000);
+      }
+    });
+  }
+});
+  </script>
+</body>
+</html>
