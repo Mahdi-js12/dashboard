@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ورود - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-page">
+    
+    <!-- سمت چپ: برندینگ -->
+    <div class="login-left">
+      <div class="login-brand">
+        <h1>📊 CRM Pro</h1>
+        <p>مدیریت هوشمند کسب‌وکار شما با ابزارهای حرفه‌ای و گزارش‌دهی پیشرفته</p>
+        
+        <div class="login-features">
+          <div class="login-feature">
+            <div class="login-feature-icon">🔒</div>
+            <span>امنیت بالا با رمزنگاری پیشرفته</span>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon">📊</div>
+            <span>گزارش‌دهی لحظه‌ای و دقیق</span>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon">💬</div>
+            <span>پشتیبانی ۲۴ ساعته در ۷ روز هفته</span>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon">⚡</div>
+            <span>سرعت بالا و رابط کاربری روان</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- سمت راست: فرم -->
+    <div class="login-right">
+      <div class="login-form-wrapper">
+        <h2>👋 خوش آمدید</h2>
+        <p class="subtitle">برای ادامه وارد حساب کاربری خود شوید</p>
+
+        <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+          
+          <div class="form-group">
+            <label class="form-label">📧 ایمیل یا شماره موبایل</label>
+            <input type="text" class="form-control" placeholder="example@mail.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">🔒 رمز عبور</label>
+            <input type="password" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); cursor: pointer;">
+              <input type="checkbox"> مرا به خاطر بسپار
+            </label>
+            <a href="#" style="font-size: 13px; color: var(--primary-light);">فراموشی رمز؟</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;">
+            🔵 ورود به حساب
+          </button>
+
+          <div style="text-align: center; margin: 25px 0; position: relative;">
+            <div style="height: 1px; background-color: var(--border);"></div>
+            <span style="position: absolute; top: 50%; right: 50%; transform: translate(50%, -50%); background-color: var(--bg-main); padding: 0 15px; font-size: 12px; color: var(--text-muted);">یا ورود با</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button type="button" class="btn btn-secondary" style="justify-content: center;">🔍 گوگل</button>
+            <button type="button" class="btn btn-secondary" style="justify-content: center;">💼 مایکروسافت</button>
+          </div>
+
+          <p style="text-align: center; margin-top: 25px; font-size: 13px; color: var(--text-secondary);">
+            حساب ندارید؟ <a href="#" style="color: var(--primary-light); font-weight: 600;">ثبت‌نام کنید</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
