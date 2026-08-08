@@ -8,31 +8,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* رنگ‌های اصلی */
-  --primary: #7c3aed;          /* بنفش اصلی */
-  --primary-light: #a78bfa;    /* بنفش روشن */
-  --primary-dark: #5b21b6;     /* بنفش تیره */
-  --accent: #f97316;           /* نارنجی */
-  --accent-light: #fb923c;     /* نارنجی روشن */
-  --success: #10b981;          /* سبز */
-  --danger: #ef4444;           /* قرمز */
-  --warning: #f59e0b;          /* زرد */
-  --info: #06b6d4;             /* آبی */
-
-  /* رنگ‌های پس‌زمینه */
-  --bg-main: #0f0a1e;          /* پس‌زمینه اصلی */
-  --bg-card: #1a1330;          /* پس‌زمینه کارت‌ها */
-  --bg-card-hover: #241940;    /* hover کارت‌ها */
-  --bg-sidebar: #160f2b;       /* پس‌زمینه سایدبار */
-  --bg-input: #1f1740;         /* پس‌زمینه اینپوت‌ها */
-
-  /* رنگ‌های متن */
-  --text-primary: #f1f5f9;     /* متن اصلی */
-  --text-secondary: #94a3b8;   /* متن ثانویه */
-  --text-muted: #64748b;       /* متن کم‌رنگ */
-
-  /* سایر */
-  --border: #2d1f54;           /* رنگ حاشیه */
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
+  --primary-dark: #5b21b6;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #06b6d4;
+  --bg-main: #0f0a1e;
+  --bg-card: #1a1330;
+  --bg-card-hover: #241940;
+  --bg-sidebar: #160f2b;
+  --bg-input: #1f1740;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: #2d1f54;
   --shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
   --radius: 12px;
   --radius-sm: 8px;
@@ -55,23 +48,11 @@ html, body {
   font-size: 14px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: inherit; }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-input, select, textarea {
-  font-family: inherit;
-}
-
-/* ---------- ۳. چیدمان اصلی (Layout) ---------- */
+/* ---------- ۳. چیدمان اصلی ---------- */
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -117,13 +98,8 @@ input, select, textarea {
   color: var(--text-primary);
 }
 
-.sidebar-menu {
-  list-style: none;
-}
-
-.sidebar-menu li {
-  margin-bottom: 4px;
-}
+.sidebar-menu { list-style: none; }
+.sidebar-menu li { margin-bottom: 4px; }
 
 .sidebar-menu a {
   display: flex;
@@ -201,9 +177,7 @@ input, select, textarea {
   font-size: 13px;
 }
 
-.header-search input::placeholder {
-  color: var(--text-muted);
-}
+.header-search input::placeholder { color: var(--text-muted); }
 
 .header-actions {
   display: flex;
@@ -266,21 +240,11 @@ input, select, textarea {
   font-size: 13px;
 }
 
-.header-user-info {
-  font-size: 12px;
-}
+.header-user-info { font-size: 12px; }
+.header-user-info .name { font-weight: 600; color: var(--text-primary); }
+.header-user-info .role { color: var(--text-muted); font-size: 10px; }
 
-.header-user-info .name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.header-user-info .role {
-  color: var(--text-muted);
-  font-size: 10px;
-}
-
-/* ---------- ۷. کارت‌های KPI (آمار) ---------- */
+/* ---------- ۷. کارت‌های KPI ---------- */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -324,13 +288,8 @@ input, select, textarea {
   gap: 4px;
 }
 
-.kpi-change.up {
-  color: var(--success);
-}
-
-.kpi-change.down {
-  color: var(--danger);
-}
+.kpi-change.up { color: var(--success); }
+.kpi-change.down { color: var(--danger); }
 
 .kpi-icon {
   width: 50px;
@@ -342,27 +301,12 @@ input, select, textarea {
   font-size: 22px;
 }
 
-.kpi-icon.purple {
-  background-color: rgba(124, 58, 237, 0.15);
-  color: var(--primary-light);
-}
+.kpi-icon.purple { background-color: rgba(124, 58, 237, 0.15); color: var(--primary-light); }
+.kpi-icon.orange { background-color: rgba(249, 115, 22, 0.15); color: var(--accent); }
+.kpi-icon.green { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+.kpi-icon.blue { background-color: rgba(6, 182, 212, 0.15); color: var(--info); }
 
-.kpi-icon.orange {
-  background-color: rgba(249, 115, 22, 0.15);
-  color: var(--accent);
-}
-
-.kpi-icon.green {
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--success);
-}
-
-.kpi-icon.blue {
-  background-color: rgba(6, 182, 212, 0.15);
-  color: var(--info);
-}
-
-/* ---------- ۸. پنل‌ها (Cards/Panels) ---------- */
+/* ---------- ۸. پنل‌ها ---------- */
 .panel {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
@@ -415,29 +359,12 @@ input, select, textarea {
   border: 1px solid var(--border);
 }
 
-.btn-secondary:hover {
-  background-color: var(--bg-card-hover);
-}
+.btn-secondary:hover { background-color: var(--bg-card-hover); }
+.btn-accent { background: linear-gradient(135deg, var(--accent), #ea580c); color: white; }
+.btn-success { background-color: var(--success); color: white; }
+.btn-danger { background-color: var(--danger); color: white; }
 
-.btn-accent {
-  background: linear-gradient(135deg, var(--accent), #ea580c);
-  color: white;
-}
-
-.btn-success {
-  background-color: var(--success);
-  color: white;
-}
-
-.btn-danger {
-  background-color: var(--danger);
-  color: white;
-}
-
-.btn-sm {
-  padding: 6px 12px;
-  font-size: 12px;
-}
+.btn-sm { padding: 6px 12px; font-size: 12px; }
 
 .btn-icon {
   width: 32px;
@@ -448,9 +375,7 @@ input, select, textarea {
 }
 
 /* ---------- ۱۰. جدول ---------- */
-.table-wrapper {
-  overflow-x: auto;
-}
+.table-wrapper { overflow-x: auto; }
 
 .data-table {
   width: 100%;
@@ -467,13 +392,8 @@ input, select, textarea {
   border-bottom: 1px solid var(--border);
 }
 
-.data-table thead th:first-child {
-  border-top-right-radius: var(--radius-sm);
-}
-
-.data-table thead th:last-child {
-  border-top-left-radius: var(--radius-sm);
-}
+.data-table thead th:first-child { border-top-right-radius: var(--radius-sm); }
+.data-table thead th:last-child { border-top-left-radius: var(--radius-sm); }
 
 .data-table tbody td {
   padding: 14px 15px;
@@ -482,13 +402,8 @@ input, select, textarea {
   color: var(--text-primary);
 }
 
-.data-table tbody tr:hover {
-  background-color: var(--bg-card-hover);
-}
-
-.data-table tbody tr:last-child td {
-  border-bottom: none;
-}
+.data-table tbody tr:hover { background-color: var(--bg-card-hover); }
+.data-table tbody tr:last-child td { border-bottom: none; }
 
 /* ---------- ۱۱. Badge و Tag ---------- */
 .badge {
@@ -501,30 +416,11 @@ input, select, textarea {
   font-weight: 600;
 }
 
-.badge-success {
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--success);
-}
-
-.badge-danger {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: var(--danger);
-}
-
-.badge-warning {
-  background-color: rgba(245, 158, 11, 0.15);
-  color: var(--warning);
-}
-
-.badge-info {
-  background-color: rgba(6, 182, 212, 0.15);
-  color: var(--info);
-}
-
-.badge-primary {
-  background-color: rgba(124, 58, 237, 0.15);
-  color: var(--primary-light);
-}
+.badge-success { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+.badge-danger { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+.badge-warning { background-color: rgba(245, 158, 11, 0.15); color: var(--warning); }
+.badge-info { background-color: rgba(6, 182, 212, 0.15); color: var(--info); }
+.badge-primary { background-color: rgba(124, 58, 237, 0.15); color: var(--primary-light); }
 
 /* ---------- ۱۲. آواتار ---------- */
 .avatar {
@@ -551,20 +447,11 @@ input, select, textarea {
   gap: 10px;
 }
 
-.user-cell .user-name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.user-cell .user-email {
-  font-size: 11px;
-  color: var(--text-muted);
-}
+.user-cell .user-name { font-weight: 600; color: var(--text-primary); }
+.user-cell .user-email { font-size: 11px; color: var(--text-muted); }
 
 /* ---------- ۱۳. فرم‌ها ---------- */
-.form-group {
-  margin-bottom: 18px;
-}
+.form-group { margin-bottom: 18px; }
 
 .form-label {
   display: block;
@@ -591,18 +478,9 @@ input, select, textarea {
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
-.form-control::placeholder {
-  color: var(--text-muted);
-}
-
-select.form-control {
-  cursor: pointer;
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 90px;
-}
+.form-control::placeholder { color: var(--text-muted); }
+select.form-control { cursor: pointer; }
+textarea.form-control { resize: vertical; min-height: 90px; }
 
 .form-row {
   display: grid;
@@ -618,11 +496,7 @@ textarea.form-control {
   height: 24px;
 }
 
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
 
 .toggle-slider {
   position: absolute;
@@ -659,13 +533,11 @@ textarea.form-control {
   background-color: white;
 }
 
-/* ---------- ۱۵. نمودارها (CSS-Only) ---------- */
+/* ---------- ۱۵. نمودار میله‌ای ---------- */
 .chart-placeholder {
   width: 100%;
   height: 280px;
-  background: linear-gradient(180deg, 
-    rgba(124, 58, 237, 0.05) 0%, 
-    transparent 100%);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%);
   border-radius: var(--radius-sm);
   position: relative;
   padding: 20px;
@@ -685,7 +557,7 @@ textarea.form-control {
 .bar {
   flex: 1;
   max-width: 70px;
-  background: linear-gradient(180deg, #7c3aed, #5b21b6);
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
   border-radius: 6px 6px 0 0;
   position: relative;
   transition: all 0.3s ease;
@@ -693,7 +565,7 @@ textarea.form-control {
 }
 
 .bar:hover {
-  background: linear-gradient(180deg, #f97316, #ea580c);
+  background: linear-gradient(180deg, var(--accent), #ea580c);
   transform: translateY(-5px);
 }
 
@@ -704,7 +576,7 @@ textarea.form-control {
   right: 0;
   text-align: center;
   font-size: 11px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
@@ -715,61 +587,9 @@ textarea.form-control {
   right: 0;
   text-align: center;
   font-size: 11px;
-  color: #f1f5f9;
+  color: var(--text-primary);
   font-weight: 600;
   white-space: nowrap;
-}
-
-
-.bar:hover {
-  background: linear-gradient(180deg, #f97316, #ea580c);
-  transform: scaleY(1.05);
-}
-
-.bar-label {
-  position: absolute;
-  bottom: -28px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 11px;
-  color: #94a3b8;
-}
-
-.bar-value {
-  position: absolute;
-  top: -22px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 11px;
-  color: #f1f5f9;
-  font-weight: 600;
-}
-
-.bar {
-  flex: 1;
-  margin: 0 4px;
-  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
-  border-radius: 4px 4px 0 0;
-  position: relative;
-  transition: var(--transition);
-  min-height: 20px;
-}
-
-.bar:hover {
-  background: linear-gradient(180deg, var(--accent), #ea580c);
-  transform: scaleY(1.05);
-}
-
-.bar-label {
-  position: absolute;
-  bottom: -25px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-muted);
 }
 
 /* ---------- ۱۶. Pagination ---------- */
@@ -802,10 +622,7 @@ textarea.form-control {
   color: white;
 }
 
-.pagination button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
+.pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* ---------- ۱۷. Tabs ---------- */
 .tabs {
@@ -825,22 +642,13 @@ textarea.form-control {
   transition: var(--transition);
 }
 
-.tab:hover {
-  color: var(--text-primary);
-}
-
-.tab.active {
-  color: var(--primary-light);
-  border-bottom-color: var(--primary);
-}
+.tab:hover { color: var(--text-primary); }
+.tab.active { color: var(--primary-light); border-bottom-color: var(--primary); }
 
 /* ---------- ۱۸. Modal ---------- */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
   align-items: center;
@@ -849,9 +657,7 @@ textarea.form-control {
   backdrop-filter: blur(4px);
 }
 
-.modal-overlay.active {
-  display: flex;
-}
+.modal-overlay.active { display: flex; }
 
 .modal {
   background-color: var(--bg-card);
@@ -877,10 +683,7 @@ textarea.form-control {
   border-bottom: 1px solid var(--border);
 }
 
-.modal-title {
-  font-size: 16px;
-  font-weight: 700;
-}
+.modal-title { font-size: 16px; font-weight: 700; }
 
 .modal-close {
   width: 30px;
@@ -911,9 +714,7 @@ textarea.form-control {
   transition: transform 0.4s ease;
 }
 
-.toast.show {
-  transform: translateX(0);
-}
+.toast.show { transform: translateX(0); }
 
 .toast-icon {
   width: 32px;
@@ -925,15 +726,8 @@ textarea.form-control {
   font-size: 16px;
 }
 
-.toast.success .toast-icon {
-  background-color: rgba(16, 185, 129, 0.15);
-  color: var(--success);
-}
-
-.toast.error .toast-icon {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: var(--danger);
-}
+.toast.success .toast-icon { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+.toast.error .toast-icon { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
 
 /* ---------- ۲۰. Login Page ---------- */
 .login-page {
@@ -964,14 +758,9 @@ textarea.form-control {
   animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate {
-  to { transform: rotate(360deg); }
-}
+@keyframes rotate { to { transform: rotate(360deg); } }
 
-.login-brand {
-  position: relative;
-  z-index: 1;
-}
+.login-brand { position: relative; z-index: 1; }
 
 .login-brand h1 {
   font-size: 42px;
@@ -1085,10 +874,7 @@ textarea.form-control {
 
 /* ---------- ۲۳. Skeleton Loading ---------- */
 .skeleton {
-  background: linear-gradient(90deg, 
-    var(--bg-input) 0%, 
-    var(--bg-card-hover) 50%, 
-    var(--bg-input) 100%);
+  background: linear-gradient(90deg, var(--bg-input) 0%, var(--bg-card-hover) 50%, var(--bg-input) 100%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
   border-radius: var(--radius-sm);
@@ -1100,9 +886,7 @@ textarea.form-control {
 }
 
 /* ---------- ۲۴. Dropdown Menu ---------- */
-.dropdown {
-  position: relative;
-}
+.dropdown { position: relative; }
 
 .dropdown-menu {
   position: absolute;
@@ -1119,9 +903,7 @@ textarea.form-control {
   z-index: 50;
 }
 
-.dropdown.open .dropdown-menu {
-  display: block;
-}
+.dropdown.open .dropdown-menu { display: block; }
 
 .dropdown-item {
   display: flex;
@@ -1141,9 +923,7 @@ textarea.form-control {
 
 /* ---------- ۲۵. ریسپانسیو ---------- */
 @media (max-width: 1024px) {
-  .kpi-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1151,32 +931,16 @@ textarea.form-control {
     transform: translateX(100%);
     transition: var(--transition);
   }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  .main-content {
-    margin-right: 0;
-  }
-  
-  .kpi-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .header-search {
-    display: none;
-  }
-  
-  .login-page {
-    flex-direction: column;
-  }
-  
-  .login-left {
-    padding: 30px;
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr;
-  }
+
+  .sidebar.open { transform: translateX(0); }
+
+  .main-content { margin-right: 0; }
+
+  .kpi-grid { grid-template-columns: 1fr; }
+
+  .header-search { display: none; }
+
+  .login-page { flex-direction: column; }
+  .login-left { padding: 30px; }
+  .form-row { grid-template-columns: 1fr; }
 }
