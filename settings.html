@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تنظیمات - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .settings-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+    }
+    .settings-nav {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 15px 0;
+      height: fit-content;
+    }
+    .settings-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      border-right: 3px solid transparent;
+      transition: var(--transition);
+    }
+    .settings-nav-item:hover {
+      background-color: var(--bg-input);
+      color: var(--text-primary);
+    }
+    .settings-nav-item.active {
+      background-color: rgba(124, 58, 237, 0.15);
+      color: var(--primary-light);
+      border-right-color: var(--primary);
+    }
+    .color-picker {
+      display: flex;
+      gap: 10px;
+    }
+    .color-option {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: var(--transition);
+    }
+    .color-option.active {
+      border-color: white;
+      transform: scale(1.1);
+    }
+    .setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .setting-row:last-child {
+      border-bottom: none;
+    }
+    .setting-info .title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .setting-info .desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">CRM Pro</div>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="menu-icon">🏠</span> داشبورد</a></li>
+        <li><a href="users.html"><span class="menu-icon">👥</span> کاربران</a></li>
+        <li><a href="analytics.html"><span class="menu-icon">📈</span> گزارشات</a></li>
+        <li><a href="settings.html" class="active"><span class="menu-icon">⚙️</span> تنظیمات</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="header">
+        <div></div>
+        <div class="header-actions">
+          <div class="header-user">
+            <div class="header-user-avatar">ع</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="settings-layout">
+        
+        <!-- منوی تنظیمات -->
+        <nav class="settings-nav">
+          <div class="settings-nav-item active">🏢 اطلاعات شرکت</div>
+          <div class="settings-nav-item">👤 پروفایل من</div>
+          <div class="settings-nav-item">🔐 امنیت و رمز عبور</div>
+          <div class="settings-nav-item">🔔 اعلان‌ها</div>
+          <div class="settings-nav-item">💳 درگاه پرداخت</div>
+          <div class="settings-nav-item">🎨 ظاهر و تم</div>
+          <div class="settings-nav-item">🔌 API و وب‌هوک</div>
+          <div class="settings-nav-item">📧 ایمیل SMTP</div>
+          <div class="settings-nav-item">📱 اپلیکیشن موبایل</div>
+          <div class="settings-nav-item">⚠️ حذف حساب</div>
+        </nav>
+
+        <!-- محتوای تنظیمات -->
+        <div>
+          
+          <!-- اطلاعات شرکت -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">🏢 اطلاعات شرکت</div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">نام شرکت</label>
+                <input type="text" class="form-control" value="شرکت فناوری پارس">
+              </div>
+              <div class="form-group">
+                <label class="form-label">شناسه ملی</label>
+                <input type="text" class="form-control" value="۱۴۰۰۹۸۷۶۵۴۳">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">ایمیل سازمانی</label>
+                <input type="email" class="form-control" value="info@pars-tech.ir">
+              </div>
+              <div class="form-group">
+                <label class="form-label">تلفن</label>
+                <input type="tel" class="form-control" value="۰۲۱-۸۸۷۷۶۶۵۵">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">آدرس</label>
+              <textarea class="form-control">تهران، خیابان ولیعصر، بالاتر از میدان ونک، پلاک ۲۵۶</textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">لوگو شرکت</label>
+              <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 80px; height: 80px; background-color: var(--bg-input); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 30px;">🏢</div>
+                <button class="btn btn-secondary">📁 انتخاب فایل</button>
+                <button class="btn btn-secondary" style="color: var(--danger);">🗑️ حذف</button>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 25px;">
+              <button class="btn btn-primary" onclick="showToast('تغییرات با موفقیت ذخیره شد', 'success')">💾 ذخیره تغییرات</button>
+              <button class="btn btn-secondary">انصراف</button>
+            </div>
+          </div>
+
+          <!-- تنظیمات ظاهر -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">🎨 ظاهر و تم</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">تم رنگی اصلی</label>
+              <div class="color-picker">
+                <div class="color-option active" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);"></div>
+                <div class="color-option" style="background: linear-gradient(135deg, #f97316, #ea580c);"></div>
+                <div class="color-option" style="background: linear-gradient(135deg, #10b981, #047857);"></div>
+                <div class="color-option" style="background: linear-gradient(135deg, #06b6d4, #0891b2);"></div>
+                <div class="color-option" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                <div class="color-option" style="background: linear-gradient(135deg, #ef4444, #b91c1c);"></div>
+              </div>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">🌙 حالت تیره</div>
+                <div class="desc">استفاده از تم تیره برای کاهش خستگی چشم</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">🎬 انیمیشن‌ها</div>
+                <div class="desc">نمایش انیمیشن در تغییر صفحات و المان‌ها</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">📐 حالت فشرده</div>
+                <div class="desc">کاهش فاصله بین المان‌ها برای نمایش بیشتر</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- تنظیمات اعلان -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">🔔 اعلان‌ها</div>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">📧 اعلان ایمیلی</div>
+                <div class="desc">دریافت ایمیل برای رویدادهای مهم</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">📱 اعلان پیامکی</div>
+                <div class="desc">ارسال پیامک برای موارد فوری</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div class="setting-info">
+                <div class="title">🔔 اعلان مرورگر</div>
+                <div class="desc">نمایش اعلان در مرورگر</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
