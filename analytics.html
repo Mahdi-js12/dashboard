@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>گزارشات - CRM Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .donut-chart {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--primary) 0% 35%,
+        var(--accent) 35% 60%,
+        var(--success) 60% 80%,
+        var(--info) 80% 100%
+      );
+      position: relative;
+      margin: 0 auto;
+    }
+    .donut-chart::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background-color: var(--bg-card);
+      border-radius: 50%;
+    }
+    .donut-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+    }
+    .donut-center .num {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .donut-center .lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .legend-item .left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">CRM Pro</div>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="menu-icon">🏠</span> داشبورد</a></li>
+        <li><a href="users.html"><span class="menu-icon">👥</span> کاربران</a></li>
+        <li><a href="analytics.html" class="active"><span class="menu-icon">📈</span> گزارشات</a></li>
+        <li><a href="settings.html"><span class="menu-icon">⚙️</span> تنظیمات</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="header">
+        <div class="header-search">
+          <span>🔍</span>
+          <input type="text" placeholder="جستجو...">
+        </div>
+        <div class="header-actions">
+          <select class="form-control" style="width: auto;">
+            <option>این ماه</option>
+            <option>ماه گذشته</option>
+            <option>۳ ماه اخیر</option>
+            <option>امسال</option>
+          </select>
+          <button class="btn btn-primary">📥 خروجی Excel</button>
+          <div class="header-user">
+            <div class="header-user-avatar">ع</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- KPI ها -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">کل درآمد</div>
+            <div class="kpi-value">۱.۲M تومان</div>
+            <div class="kpi-change up">▲ ۲۳.۵٪</div>
+          </div>
+          <div class="kpi-icon purple">💰</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">سفارش‌ها</div>
+            <div class="kpi-value">۸۵۰</div>
+            <div class="kpi-change up">▲ ۱۲.۳٪</div>
+          </div>
+          <div class="kpi-icon orange">📦</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">مشتریان جدید</div>
+            <div class="kpi-value">۲۴۸</div>
+            <div class="kpi-change up">▲ ۸.۷٪</div>
+          </div>
+          <div class="kpi-icon green">👥</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-info">
+            <div class="kpi-label">نرخ بازگشت</div>
+            <div class="kpi-value">۴.۸٪</div>
+            <div class="kpi-change down">▼ ۰.۵٪</div>
+          </div>
+          <div class="kpi-icon blue">🔄</div>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        
+        <!-- نمودار خطی فروش -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">📈 روند فروش ۱۲ ماه اخیر</div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-sm btn-primary">۱۴۰۳</button>
+              <button class="btn btn-sm btn-secondary">۱۴۰۲</button>
+            </div>
+          </div>
+          <div class="chart-placeholder" style="height: 320px;">
+            <div class="bar-chart" style="height: 280px;">
+              <div class="bar" style="height: 30%"></div>
+              <div class="bar" style="height: 45%"></div>
+              <div class="bar" style="height: 55%"></div>
+              <div class="bar" style="height: 40%"></div>
+              <div class="bar" style="height: 65%"></div>
+              <div class="bar" style="height: 75%"></div>
+              <div class="bar" style="height: 60%"></div>
+              <div class="bar" style="height: 80%"></div>
+              <div class="bar" style="height: 70%"></div>
+              <div class="bar" style="height: 85%"></div>
+              <div class="bar" style="height: 90%"></div>
+              <div class="bar" style="height: 95%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- نمودار دایره‌ای -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">🥧 تفکیک فروش</div>
+          </div>
+          <div class="donut-chart">
+            <div class="donut-center">
+              <div class="num">۸۵۰</div>
+              <div class="lbl">کل فروش</div>
+            </div>
+          </div>
+          <div class="legend">
+            <div class="legend-item">
+              <div class="left">
+                <div class="legend-dot" style="background: var(--primary);"></div>
+                <span>اشتراک طلایی</span>
+              </div>
+              <strong>۳۵٪</strong>
+            </div>
+            <div class="legend-item">
+              <div class="left">
+                <div class="legend-dot" style="background: var(--accent);"></div>
+                <span>دوره آموزشی</span>
+              </div>
+              <strong>۲۵٪</strong>
+            </div>
+            <div class="legend-item">
+              <div class="left">
+                <div class="legend-dot" style="background: var(--success);"></div>
+                <span>مشاوره</span>
+              </div>
+              <strong>۲۰٪</strong>
+            </div>
+            <div class="legend-item">
+              <div class="left">
+                <div class="legend-dot" style="background: var(--info);"></div>
+                <span>سایر</span>
+              </div>
+              <strong>۲۰٪</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- مقایسه عملکرد تیم‌ها -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">📊 عملکرد تیم‌های فروش</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          
+          <div style="padding: 15px; background-color: var(--bg-input); border-radius: var(--radius-sm);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <div class="avatar">م</div>
+              <div>
+                <div style="font-weight: 600;">مریم احمدی</div>
+                <div style="font-size: 11px; color: var(--text-muted);">سرپرست فروش</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: var(--text-secondary);">هدف ماهانه</span>
+              <strong>۸۵٪</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--text-secondary);">
+              فروش: <strong style="color: var(--text-primary);">۲۸۵M تومان</strong>
+            </div>
+          </div>
+
+          <div style="padding: 15px; background-color: var(--bg-input); border-radius: var(--radius-sm);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <div class="avatar">ح</div>
+              <div>
+                <div style="font-weight: 600;">حسین مرادی</div>
+                <div style="font-size: 11px; color: var(--text-muted);">کارشناس ارشد</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: var(--text-secondary);">هدف ماهانه</span>
+              <strong>۶۸٪</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 68%; background: linear-gradient(90deg, var(--info), var(--success));"></div></div>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--text-secondary);">
+              فروش: <strong style="color: var(--text-primary);">۲۲۰M تومان</strong>
+            </div>
+          </div>
+
+          <div style="padding: 15px; background-color: var(--bg-input); border-radius: var(--radius-sm);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+              <div class="avatar">ز</div>
+              <div>
+                <div style="font-weight: 600;">زهرا کریمی</div>
+                <div style="font-size: 11px; color: var(--text-muted);">کارشناس فروش</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 12px; color: var(--text-secondary);">هدف ماهانه</span>
+              <strong>۹۲٪</strong>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 92%; background: linear-gradient(90deg, var(--success), var(--info));"></div></div>
+            <div style="margin-top: 12px; font-size: 12px; color: var(--text-secondary);">
+              فروش: <strong style="color: var(--text-primary);">۳۱۰M تومان</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
